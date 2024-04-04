@@ -1,0 +1,24 @@
+---
+const hrefHome = "/";
+const hrefSub = "/subpage";
+const currentPath = Astro.url.pathname;
+---
+
+<div class="navbar justify-around">
+	<ul class="menu menu-horizontal join">
+		<li>
+			<a
+				href={hrefHome}
+				class=`btn btn-primary join-item ${currentPath != hrefHome && "btn-outline"}`
+				>Home</a
+			>
+		</li>
+		<li>
+			<a
+				href={hrefSub}
+				class=`btn btn-primary join-item ${currentPath != hrefSub && "btn-outline"}`
+				>Subpage</a
+			>
+		</li>
+	</ul>
+</div>
