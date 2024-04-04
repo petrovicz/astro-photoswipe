@@ -1,11 +1,12 @@
 ---
 import Navbar from "../components/Navbar.astro";
+const baseUrl = import.meta.env.BASE_URL;
 ---
 
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/svg+xml" href=`${baseUrl}/favicon.svg` />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<meta name="description" content="Demonstrating PhotoSwipe inside Astro, with automatic image optimizations." />
