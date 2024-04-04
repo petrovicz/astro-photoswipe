@@ -51,11 +51,19 @@ const imagePaths = Object.keys(images).filter((imagePath) => {
 	import PhotoSwipeLightbox from "photoswipe/lightbox";
 	import "photoswipe/style.css";
 
-	const lightbox = new PhotoSwipeLightbox({
-		gallery: "#gallery",
-		children: "a",
-		pswpModule: () => import("photoswipe"),
+	let lightbox: PhotoSwipeLightbox;
+
+	document.addEventListener("astro:page-load", () => {
+		lightbox = new PhotoSwipeLightbox({
+			gallery: "#gallery",
+			children: "a",
+			pswpModule: () => import("photoswipe"),
+		});
+
+		lightbox.init();
 	});
 
-	lightbox.init();
+	document.addEventListener("astro:before-swap", () => {
+		lightbox.destroy();
+	});
 </script>

@@ -1,5 +1,6 @@
 ---
 import Navbar from "../components/Navbar.astro";
+import { ViewTransitions } from 'astro:transitions';
 ---
 
 <html lang="en">
@@ -9,6 +10,7 @@ import Navbar from "../components/Navbar.astro";
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Astro + PhotoSwipe</title>
+		<ViewTransitions />
 	</head>
 	<body>
 		<Navbar />
